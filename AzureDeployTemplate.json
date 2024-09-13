@@ -95,7 +95,7 @@
     },
     "dockerImageName": {
       "type": "string",
-      "defaultValue": "bpClocker",
+      "defaultValue": "bp-clocker",
       "metadata": {
         "description": "Name of the Docker image in the container registry"
       }

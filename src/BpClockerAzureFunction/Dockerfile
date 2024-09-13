@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0.401-1-alpine3.20 AS installer-env
 
 COPY . /src/dotnet-function-app
-RUN cd /src/dotnet-function-app && \
+RUN cd /src/dotnet-function-app/src/BpClockerAzureFunction && \
     mkdir -p /home/site/wwwroot && \
     dotnet publish *.csproj --output /home/site/wwwroot
 
