@@ -11,6 +11,10 @@ cd ..
 dotnet sln bpClocker.sln add src/BpClockerAzureFunction
 ```
 
+## Problems
+
+- Function apps are not supported in Free or Shared App Service Plans. (代碼: FreeOrSharedFunctionsAppServicePlanNotSupported)
+
 ## Reference
 
 - <https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet-sln>

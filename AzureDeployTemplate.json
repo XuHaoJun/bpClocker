@@ -16,12 +16,16 @@
     },
     {
       "type": "Microsoft.Web/serverfarms",
-      "apiVersion": "2021-02-01",
+      "apiVersion": "2022-03-01",
       "name": "[parameters('hostingPlanName')]",
       "location": "[resourceGroup().location]",
+      "kind": "linux",
+      "properties": {
+        "reserved": true
+      },
       "sku": {
-        "name": "Y1",
-        "tier": "Dynamic"
+        "tier": "Basic",
+        "name": "B1"
       }
     },
     {
@@ -70,25 +74,28 @@
   "parameters": {
     "acrName": {
       "type": "string",
+      "defaultValue": "bpClocker",
       "metadata": {
         "description": "Name of the Azure Container Registry"
       }
     },
     "hostingPlanName": {
       "type": "string",
-      "defaultValue": "FunctionAppHostingPlan",
+      "defaultValue": "bpClockerHostingPlan",
       "metadata": {
         "description": "Name of the hosting plan"
       }
     },
     "functionAppName": {
       "type": "string",
+      "defaultValue": "bpClocker",
       "metadata": {
         "description": "Name of the Azure Function App"
       }
     },
     "dockerImageName": {
       "type": "string",
+      "defaultValue": "bpClocker",
       "metadata": {
         "description": "Name of the Docker image in the container registry"
       }
