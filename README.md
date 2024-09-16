@@ -19,10 +19,12 @@
      - 沒設定會讀取不到 functions 列表。
    - `WEBSITE_TIME_ZONE="Asia/Taipei"`
      - 設定台灣時區。
-   - `Bp__ApiBase=https://xxxx/ClockIn`
+   - `Bp__ApiBase=https://xxxx`
      - 公司打卡網址。
-   - `Bp__CardId__0=123456`
-     - 你的員工編號，支援多組，`Bp__CardId__1`，`Bp__CardId__2` 以此類推。
+   - `Bp__ClockApiPath=/xxxx/ClockIn`
+     - 公司打卡API路徑
+   - `Bp__CardIds__0=123456`
+     - 你的員工編號，支援多組，`Bp__CardIds__1`，`Bp__CardIds__2` 以此類推。
    - `LineBot__ChannelSecret=<YOUR_LINE_CHANNEL_SECRET>`
      - 可選，傳送打卡結果，或假日也會傳送今日不打卡。
    - `MimkitConfig__ConnectHost=<YOUR_SMTP_HOST>`
@@ -60,7 +62,13 @@
 Requirement:
 
 1. .net8
-2. Azure function cli tool: `func` (`npm i -g azure-functions-core-tools@4 --unsafe-perm true`)
+2. azurite (`npm install -g azurite`) timer trigger require azure blob
+3. Azure function cli tool: `func` (`npm i -g azure-functions-core-tools@4 --unsafe-perm true`)
+
+```sh
+cd .azurite
+azurite
+```
 
 ```sh
 cd src/BpClockerAzureFunction
