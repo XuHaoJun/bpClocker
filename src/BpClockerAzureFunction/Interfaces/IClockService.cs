@@ -2,5 +2,7 @@ namespace BpClockerAzureFunction.Interfaces;
 
 public interface IClockService
 {
-    void ClockIn();
+    Task<bool> ClockIn();
+
+    Task<bool> IsHoliday(DateTime date);
 }
